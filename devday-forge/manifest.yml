@@ -1,0 +1,26 @@
+modules:
+  jira:issueContext:
+    - key: devday-forge-hello-world-issue-context
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: devday-forge
+      description: A hello world issue context.
+      label: Hello World!
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+permissions:
+  scopes:
+    - read:user:jira
+    - read:application-role:jira
+    - read:avatar:jira
+    - read:group:jira
+app:
+  runtime:
+    name: nodejs20.x
+  id: ari:cloud:ecosystem::app/db83ea29-010c-44a7-827c-2d18e7ae71d5
