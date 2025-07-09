@@ -3,12 +3,21 @@ import ForgeReconciler, { Button, Modal, Text } from "@forge/react";
 import { invoke } from "@forge/bridge";
 
 const ModalContent = () => {
-  useEffect(() => {
-    invoke("getText", { example: "my-invoke-variable1" }).then(setData1);
-    return () => {
-      setData1(null);
-    };
-  }, []);
+  // useEffect(() => {
+  //   invoke("getText", { example: "my-invoke-variable1" }).then(setData1);
+  //   return () => {
+  //     // setData1(null);
+  //   };
+  // }, []);
+  return (
+    <Button
+      onClick={() => {
+        invoke("getText", { example: "my-invoke-variable1" }).then(setData1);
+      }}
+    >
+      test
+    </Button>
+  );
 };
 
 const App = () => {
