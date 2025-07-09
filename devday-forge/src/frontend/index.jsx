@@ -33,14 +33,16 @@ const App = () => {
     <>
       <Button
         onClick={async () => {
-          const response = await api
-            .asUser()
-            .requestJira(route`/rest/api/2/users/search`, {
-              headers: {
-                Accept: "application/json",
-              },
-            });
-          console.log({ response });
+          invoke("getText", { example: "invoke" }).then(setData);
+
+          // const response = await api
+          //   .asUser()
+          //   .requestJira(route`/rest/api/2/users/search`, {
+          //     headers: {
+          //       Accept: "application/json",
+          //     },
+          //   });
+          // console.log({ response });
         }}
       >
         Test API
