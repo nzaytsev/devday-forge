@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import ForgeReconciler, { Button, Modal, Text } from "@forge/react";
 import { invoke } from "@forge/bridge";
-import api, { route } from "@forge/api";
 
 const ModalContent = () => {
   useEffect(() => {
-    invoke("getText", { example: "my-invoke-variable" }).then(setData1);
+    invoke("getText", { example: "my-invoke-variable1" }).then(setData1);
     return () => {
       setData1(null);
     };
@@ -53,6 +52,7 @@ const App = () => {
             setData1(null);
           }}
         >
+          <ModalContent />
           <Text>{data1 ? data1 : "Loading..."}</Text>
         </Modal>
       )}
